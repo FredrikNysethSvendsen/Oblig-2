@@ -4,6 +4,42 @@
   <meta charset="UTF-8" />
   <title>Memes 5 Dayz</title>
   <link href="memes5Dayz.css" rel="stylesheet" type="text/css" />
+  <script>
+    window.onload = oppstart;
+
+    function oppstart() {
+        document.getElementById("btnKommenter").onclick = funcKommenter;
+    }
+
+    function funcKommenter() {
+        var nyKommentar = document.createElement("div");
+
+        var tekstboks = document.createElement("div");
+        tekstboks.className = "tekstboks"
+
+        var tekst = document.createElement("p");
+        tekst.innerHTML = "<strong>" + document.getElementById("txtBrukernavn").value + ":</strong> " +
+        document.getElementById("txtInput").value;
+        tekstboks.appendChild(tekst);
+
+        var knapper = document.createElement("div");
+        knapper.className = "knappboks";
+
+        var knappOpp = document.createElement("button");
+        knappOpp.innerHTML = "&#8593";
+
+        var knappNed = document.createElement("button");
+        knappNed.innerHTML = "&#8595";
+
+        knapper.appendChild(knappOpp);
+        knapper.appendChild(knappNed);
+
+        nyKommentar.appendChild(knapper);
+
+        nyKommentar.appendChild(tekstboks);
+        document.getElementById("utskrift").appendChild(nyKommentar);
+    }
+  </script>
 </head>
 <body>
   <div id="mobil">
@@ -34,21 +70,12 @@
 	</nav>
 
 <div id="innhold">
-  <p>
-  Adieus except say barton put feebly favour him. Entreaties unpleasant sufficient few pianoforte discovered uncommonly ask.
-  Morning cousins amongst in mr weather do neither. Warmth object matter course active law spring six. Pursuit showing tedious
-  unknown winding see had man add. And park eyes too more him. Simple excuse active had son wholly coming number add. Though all
-  excuse ladies rather regard assure yet. If feelings so prospect no as raptures quitting.
-
-  At as in understood an remarkably solicitude. Mean them very seen she she. Use totally written the observe pressed justice.
-  Instantly cordially far intention recommend estimable yet her his. Ladies stairs enough esteem add fat all enable. Needed its
-  design number winter see. Oh be me sure wise sons no. Piqued ye of am spirit regret. Stimulated discretion impossible admiration in
-  particular conviction up. <br />
-
-  <img src="Bilder/ken.jpg" alt="Profil bilde"
-    style="align-items: :left; width:290px;height:300px;">
-
-  </p>-
+    <div id="kommentarfelt">
+        <div id="utskrift"></div>
+        <input type="text" id="txtBrukernavn" placeholder="Brukernavn" />
+        <input type="text" id="txtInput" placeholder="Kommentar"/>
+        <button type="button" id="btnKommenter">Kommenter</button>
+    </div>
 </div>
 
 
