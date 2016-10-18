@@ -1,0 +1,105 @@
+@media screen and (min-width:480px){
+  #mobil{
+    display: none;
+  }
+
+  #skjerm{
+    float: left;
+    width: 1080px;
+    background: #696969;
+    margin-left: 6px;
+    border: none;
+  }
+
+  #skjerm ul{
+    overflow: hidden;
+  }
+
+  #skjerm ul li a{
+    text-decoration: none;
+    font-family: "Comic Sans", cursive, sans-serif;
+    color: #FFFFFF;
+  }
+
+  #skjerm ul li{
+    display: inline-block;
+    margin-right: 5px;
+    width: 140px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #skjerm ul li ul {
+      display: none;
+      background-color: #696969;
+      width: 60px;
+      position: absolute;
+      margin-left: -10px;
+  }
+
+  #skjerm ul li ul li{
+    margin-left: -25px;
+    margin-top: 15px;
+  }
+
+  #skjerm ul li:hover ul{
+    display: block;
+  }
+}
+@media screen and (max-width:480px){
+  #skjerm{
+    display: none;
+  }
+
+  #mobil{
+    position: relative;
+    display: inline-block;
+  }
+
+  #btnDrop{
+    width: 35px;
+    height: 35px;
+    background-color: #696969;
+    border: 0;
+    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  #btnDrop:hover{
+      background-color: #808080;
+  }
+
+  #mobilmeny{
+    display: none;
+    position: absolute;;
+    width: 80px;
+    margin-top: 30px;
+  }
+
+  #mobil:hover #mobilmeny{
+    display: block;
+  }
+  #mobilmeny a{
+    text-decoration: none;
+  }
+
+  #mobilmeny li{
+    margin-left: -40px;
+    padding: 10px;
+    font-family: "Comic Sans", cursive, sans-serif;
+    color: #FFFFFF;
+    font-size: 12px;
+    background-color: #808080;
+    text-decoration: none;
+  }
+  #mobilmeny ul{
+    list-style-type: none;
+    list-style-image: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  #mobilmeny a li:hover{
+    background-color: #696969;
+  }
+}
