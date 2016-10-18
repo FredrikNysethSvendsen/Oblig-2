@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Memes 5 Dayz</title>
+  <link href="memes5Dayz.css" rel="stylesheet" type="text/css" />
+  <script>
+    window.onload = oppstart;
+    function oppstart() {
+        document.getElementById("btnPrevious").onclick = function(){chgImg(-1)};
+        document.getElementById("btnNext").onclick = function(){chgImg(1)};
+        document.getElementById("btnPlayStop").onclick = autoFunction;
+        document.getElementById("btnKommenter").onclick = funcKommenter;
+    }
+      
+      
+    NewImg = new Array (
+        "images/01.jpg",
+        "images/02.jpg",
+        "images/03.jpg",
+        "images/04.jpg",
+        "images/05.jpg",
+        "images/06.jpg",
+        "images/07.jpg"
+        );
+    var ImgNum = 0;
+    var ImgLength = NewImg.length - 1;
+
+    var delay = 2750;
+    var lock = false;
+    var run;
+
+    function chgImg(direction) {
+        if (document.images) {
+        ImgNum = ImgNum + direction;
+        if (ImgNum > ImgLength) {
+        ImgNum = 0;
+        }
+        if (ImgNum < 0) {
+        ImgNum = ImgLength;
+        }
+        document.slideshow.src = NewImg[ImgNum];
+           }
+        }
+
+        function autoFunction() {
+        if (lock == true) {
+        lock = false;
+        window.clearInterval(run);
+        }
+        else if (lock == false) {
+        lock = true;
+        run = setInterval("chgImg(1)", delay);
+          }
+     }
+    function funcKommenter() {
+        var nyKommentar = document.createElement("div");
+        var tekstboks = document.createElement("div");
+        tekstboks.className = "tekstboks"
+        var tekst = document.createElement("p");
+        tekst.innerHTML = "<strong>" + document.getElementById("txtBrukernavn").value + ":</strong> " +
+        document.getElementById("txtInput").value;
+        tekstboks.appendChild(tekst);
+        var knapper = document.createElement("div");
+        knapper.className = "knappboks";
+        var knappOpp = document.createElement("button");
+        knappOpp.innerHTML = "&#8593";
+        var knappNed = document.createElement("button");
+        knappNed.innerHTML = "&#8595";
+        knapper.appendChild(knappOpp);
+        knapper.appendChild(knappNed);
+        nyKommentar.appendChild(knapper);
+        nyKommentar.appendChild(tekstboks);
+        document.getElementById("utskrift").appendChild(nyKommentar);
+    }
+  </script>
+</head>
+<body>
+    
+  <div id="mobil">
+		<button id="btnDrop">&#9776;</button>
+		<nav id="mobilmeny">
+			<ul>
+				<li><a href="#">Forside</a></li>
+				<li><a href="#">Memes</a></li>
+				<li><a href="#">Videoer</a></li>
+				<li><a href="#">Top</a></li>
+				<li><a href="#">Classics</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<nav id="skjerm">
+		<ul>
+			<li><a href="#">Forside</a></li>
+			<li><a href="#">Memes</a></li>
+			<li><a href="#">Videoer</a>
+				<ul>
+					<li><a href="#">Top</a></li>
+					<li><a href="#">Random</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Classics</a></li>
+		</ul>
+	</nav>
+    
+    
+       
+   
+
+<div id="innhold">
+    <div id="bildeBoks">
+        <img src="images/01.jpg" name="slideshow"; >
+    
+        <br><button id="btnPrevious" type="button" > Previous </button>
+            <button id="btnPlayStop" type="button"> Play/Stop </button>
+            <button id= "btnNext" type="button"> Next </button> 
+     </div>
+    <div id="kommentarfelt">
+        <div id="utskrift"></div>
+        <input type="text" id="txtBrukernavn" placeholder="Brukernavn" />
+        <input type="text" id="txtInput" placeholder="Kommentar"/>
+        <button type="button" id="btnKommenter">Kommenter</button>
+    </div>
+</div>
+
+
+
+
+
+
+<footer>Copyright: 2016</footer>
+
+</body>
+</html>
