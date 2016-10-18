@@ -12,17 +12,15 @@
         document.getElementById("btnPlayStop").onclick = autoFunction;
         document.getElementById("btnKommenter").onclick = funcKommenter;
     }
-      
-      
-    NewImg = new Array (
-        "images/01.jpg",
-        "images/02.jpg",
-        "images/03.jpg",
-        "images/04.jpg",
-        "images/05.jpg",
-        "images/06.jpg",
-        "images/07.jpg"
-        );
+
+
+     var NewImg = ["images/01.jpg",
+     "images/02.jpg",
+     "images/03.jpg",
+     "images/04.jpg",
+     "images/05.jpg",
+     "images/06.jpg",
+     "images/07.jpg"]
     var ImgNum = 0;
     var ImgLength = NewImg.length - 1;
 
@@ -76,7 +74,7 @@
   </script>
 </head>
 <body>
-    
+
   <div id="mobil">
 		<button id="btnDrop">&#9776;</button>
 		<nav id="mobilmeny">
@@ -103,18 +101,14 @@
 			<li><a href="#">Classics</a></li>
 		</ul>
 	</nav>
-    
-    
-       
-   
 
 <div id="innhold">
     <div id="bildeBoks">
         <img src="images/01.jpg" name="slideshow"; >
-    
+
         <br><button id="btnPrevious" type="button" > Previous </button>
             <button id="btnPlayStop" type="button"> Play/Stop </button>
-            <button id= "btnNext" type="button"> Next </button> 
+            <button id= "btnNext" type="button"> Next </button>
      </div>
     <div id="kommentarfelt">
         <div id="utskrift"></div>
