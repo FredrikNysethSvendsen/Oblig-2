@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Memes 5 Dayz</title>
+  <link href="memes5Dayz.css" rel="stylesheet" type="text/css" />
+  <script>
+    window.onload = oppstart;
+
+    function oppstart() {
+        document.getElementById("btnKommenter").onclick = funcKommenter;
+    }
+
+    function funcKommenter() {
+        var nyKommentar = document.createElement("div");
+
+        var tekstboks = document.createElement("div");
+        tekstboks.className = "tekstboks"
+
+        var tekst = document.createElement("p");
+        tekst.innerHTML = "<strong>" + document.getElementById("txtBrukernavn").value + ":</strong> " +
+        document.getElementById("txtInput").value;
+        tekstboks.appendChild(tekst);
+
+        var knapper = document.createElement("div");
+        knapper.className = "knappboks";
+
+        var knappOpp = document.createElement("button");
+        knappOpp.innerHTML = "&#8593";
+
+        var knappNed = document.createElement("button");
+        knappNed.innerHTML = "&#8595";
+
+        knapper.appendChild(knappOpp);
+        knapper.appendChild(knappNed);
+
+        nyKommentar.appendChild(knapper);
+
+        nyKommentar.appendChild(tekstboks);
+        document.getElementById("utskrift").appendChild(nyKommentar);
+    }
+  </script>
+</head>
+<body>
+  <div id="mobil">
+		<button id="btnDrop">&#9776;</button>
+		<nav id="mobilmeny">
+			<ul>
+				<li><a href="#">Forside</a></li>
+				<li><a href="#">Memes</a></li>
+				<li><a href="#">Videoer</a></li>
+				<li><a href="#">Top</a></li>
+				<li><a href="#">Classics</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<nav id="skjerm">
+		<ul>
+			<li><a href="#">Forside</a></li>
+			<li><a href="#">Memes</a></li>
+			<li><a href="#">Videoer</a>
+				<ul>
+					<li><a href="#">Top</a></li>
+					<li><a href="#">Random</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Classics</a></li>
+		</ul>
+	</nav>
+
+<div id="innhold">
+    <div id="kommentarfelt">
+        <div id="utskrift"></div>
+        <input type="text" id="txtBrukernavn" placeholder="Brukernavn" />
+        <input type="text" id="txtInput" placeholder="Kommentar"/>
+        <button type="button" id="btnKommenter">Kommenter</button>
+    </div>
+</div>
+
+
+
+
+
+
+<footer>Copyright: 2016</footer>
+
+</body>
+</html>

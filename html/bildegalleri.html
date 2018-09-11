@@ -1,0 +1,96 @@
+<!doctype HTML>
+
+<html>
+    
+	<head>
+		<title>Bildegalleri</title>
+		<meta charset="utf-8" />
+		<script>
+            
+            window.onload = oppstart;
+            
+            function oppstart(){
+                document.getElementById("btnPrevious").onclick = function(){chgImg(-1)};
+                document.getElementById("btnNext").onclick = function(){chgImg(1)};
+                document.getElementById("btnPlayStop").onclick = autoFunction;
+            }
+        
+            
+            
+            NewImg = new Array (
+            "images/01.jpg",
+            "images/02.jpg",
+            "images/03.jpg",
+            "images/04.jpg",
+            "images/05.jpg",
+            "images/06.jpg",
+            "images/07.jpg"
+            );
+            var ImgNum = 0;
+            var ImgLength = NewImg.length - 1;
+           
+            var delay = 2750;
+            var lock = false;
+            var run;
+            
+            function chgImg(direction) {
+                if (document.images) {
+                ImgNum = ImgNum + direction;
+                if (ImgNum > ImgLength) {
+                ImgNum = 0;
+                }
+                if (ImgNum < 0) {
+                ImgNum = ImgLength;
+                }
+                document.slideshow.src = NewImg[ImgNum];
+                   }
+                }
+
+                function autoFunction() {
+                if (lock == true) {
+                lock = false;
+                window.clearInterval(run);
+                }
+                else if (lock == false) {
+                lock = true;
+                run = setInterval("chgImg(1)", delay);
+                  }
+             }
+        </script>
+        
+        <style>
+            
+            #ytrelag {
+                width: 100%;
+                text-align: center;
+            }
+            #indrelag {
+               display: inline-block;
+                text-align: center;
+            } 
+        </style>
+	</head>
+
+
+
+    <body>
+    <div id="ytreLag"> 
+    <div id="indreLag">
+        <img src="images/01.jpg" name="slideshow"; >
+    
+      
+   
+        
+        
+        <br><button id="btnPrevious" type="button" > Previous </button>
+            <button id="btnPlayStop" type="button"> Play/Stop </button>
+            <button id= "btnNext" type="button"> Next </button> 
+       
+       
+
+    </div>
+</div>
+
+    </body>
+
+	</html>
